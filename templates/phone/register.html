@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop name</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+    <style>
+
+
+.form-inline{
+    margin-right: auto;
+
+}
+.container{
+    height: 100px;
+    margin-bottom: 150px; 
+}
+
+.form-control{
+    width: unset;
+}
+.dropdown-menu{
+  min-width: 8.5rem;
+}
+.dropBtn{
+    background: none;
+    border: none;
+    color: #646566; 
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+.dropBtn:hover{
+  background-color: #c1c4c7;
+}
+.navbar-brand {
+  margin-right: auto;
+}
+.form-inline{
+    margin-right: auto;
+
+}
+.container{
+    height: 100px;
+    margin-bottom: 150px; 
+}
+
+.form-control{
+    width: 200px;
+}
+.login{
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    margin-top: 10%;
+}
+
+.registruj{
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.imateNalog{
+    float: left;
+    font-size: 14px;
+}
+
+.submitBtn{
+    float: right;
+    background: none;
+    border: none;
+    color: #1e5e96;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+.submitBtn:focus {
+  outline: none;
+}
+.submitBtn:active {
+  color:#0b3e6b;
+}
+.submitBtn:hover {
+  color:#0e64b0;
+}
+.error{
+  font-size: 11px;
+  color: #c22338;
+  margin-bottom: unset;
+}
+.dropdown-menu {
+    min-width: 15rem;
+}
+.register{
+    float: unset;
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+
+
+        </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/home">Ime</a>
+        <div class="dropdown">
+          <button class="btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/phone/home">Početna</a>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container">
+
+        <div class="register loginElement">
+            <h3>Registracija</h3>
+            <form name="registerForm" action="/phone/register" method="POST">
+
+                <div class="form-group">
+                    <label for="Ime">Ime:</label>
+                    <input type="text" class="form-control" id="Ime" name="ime">
+                </div>
+
+                <div class="form-group">
+                    <label for="Prezime">Prezime:</label>
+                    <input type="text" class="form-control" id="prezime" name="prezime">
+                </div>
+
+                <div class="form-group">
+                <label for="registerEmail">E-mail</label>
+                <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp" name="registerEmail">
+                {% if statement == True %}
+                <p class="error">* Ovaje email je u upotrebi!!!</p>
+                {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="Brojtel">Broj telefona: (opcionalno)</label>
+                    <input type="number" class="form-control" id="brojTel" name="brojTelefona">
+                </div>
+
+                <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+                {% if errstatement == True %}
+                <p class="error">* Password mora sadrzati najmanje 8 karaktera!!!</p>
+                {% endif %} 
+                </div>
+                <button type="submit" class="btn btn-outline-secondary my-2 my-sm-0" name="btn" value="register">Registruj se</button>
+            </form>
+            <div class="redirectclass">
+                <form action="/phone/register" method="POST">
+                    <p class="imateNalog">Imate nalog?</p>
+                    <button type="submit" name="btn" value="redirectLogin" class="submitBtn">Prijavite se!</button>
+                    </form>
+            </div>
+    </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

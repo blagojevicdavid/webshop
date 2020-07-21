@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+<!--
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop name</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+       
+-->    
+{% block head %} 
+       <style>
+
+
+.form-inline{
+    margin-right: auto;
+
+}
+.container{
+    height: 100px;
+    margin-bottom: 150px; 
+}
+
+.form-control{
+    width: 200px;
+}
+.login{
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    margin-top: 10%;
+}
+
+.registruj{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.nemateNalog{
+    float: left;
+    width: auto;
+    font-size: 14px;
+}
+.submitBtn{
+    float: right;
+    background: none;
+    border: none;
+    color: #1e5e96;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+.submitBtn:focus {
+  outline: none;
+}
+.submitBtn:active {
+  color:#0b3e6b;
+}
+.submitBtn:hover {
+  color:#0e64b0;
+}
+.error{
+  font-size: 11px;
+  color: #c22338;
+  margin-bottom: unset;
+}
+
+
+</style>
+{% endblock %}
+</head>
+<body>
+  {% block body %}
+
+    <div class="container">
+            <div class="login">
+                <h3>Login</h3>
+                <form  action="/desktop/login" method="POST">
+                    <div class="form-group">
+                    <label for="LoginEmail">E-mail</label>
+                    <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" name="email">
+                    </div>
+                    <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-outline-secondary my-2 my-sm-0" value="Login" name="btn">Prijavi se</button>
+                  </form>
+                  {% if statment == True %}
+                  <p class="error">* Email i password se ne poklapaju!!!</p>
+                  {% endif %}
+                <div class="registracija">
+                <form action="/desktop/login" method="POST">
+                    <p class="nemateNalog">Nemate nalog?</p>
+                    <button type="submit" name="btn" value="redirect" class="submitBtn">Registrujte se!</button>
+                    </form>
+            </div>
+            </div>
+
+    </div> <!-- cont -->
+{% endblock %}
+</body>
+</html>

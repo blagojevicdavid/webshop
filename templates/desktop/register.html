@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop name</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+
+
+.form-inline{
+    margin-right: auto;
+
+}
+
+.form-control{
+    width: unset;
+}
+
+.register{
+    float: unset;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+.loginElement{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.imateNalog{
+    float: left;
+    width: auto;
+    font-size: 14px;
+}
+.submitBtn{
+    float: right;
+    background: none;
+    border: none;
+    color: #1e5e96;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+.submitBtn:focus {
+  outline: none;
+}
+.submitBtn:active {
+  color:#0b3e6b;
+}
+.submitBtn:hover {
+  color:#0e64b0;
+}
+.redirectclass{
+    margin-top: 10px;
+}
+.error{
+  font-size: 11px;
+  color: #c22338;
+  margin-bottom: unset;
+}
+
+
+/*
+@media only screen and (max-width: 650px) {
+
+.register{
+    float: unset;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+    
+}
+*/
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Ime</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="/" method="POST" name="searchForm">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Login </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container">
+
+                <div class="register loginElement">
+                    <h3>Registracija</h3>
+                    <form name="registerForm" action="/desktop/register" method="POST">
+
+                        <div class="form-group">
+                            <label for="Ime">Ime:</label>
+                            <input type="text" class="form-control" id="Ime" name="ime">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Prezime">Prezime:</label>
+                            <input type="text" class="form-control" id="prezime" name="prezime">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="registerEmail">E-mail</label>
+                        <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp" name="registerEmail">
+                        {% if statement == True %}
+                        <p class="error">* Ovaje email je u upotrebi!!!</p>
+                        {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Brojtel">Broj telefona: (opcionalno)</label>
+                            <input type="number" class="form-control" id="brojTel" name="brojTelefona">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                        {% if errstatement == True %}
+                        <p class="error">* Password mora sadrzati najmanje 8 karaktera!!!</p>
+                        {% endif %} 
+                        </div>
+                        <button type="submit" class="btn btn-outline-secondary my-2 my-sm-0" name="btn" value="register">Registruj se</button>
+                    </form>
+                    <div class="redirectclass">
+                        <form action="/desktop/register" method="POST">
+                            <p class="imateNalog">Imate nalog?</p>
+                            <button type="submit" name="btn" value="redirectLogin" class="submitBtn">Prijavite se!</button>
+                            </form>
+                    </div>
+            </div>
+    </div> <!-- cont -->
+
+</body>
+</html>
