@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, session
 import sqlite3
 from datetime import date
+import runpy
 
 app = Flask(__name__)
 
@@ -144,9 +145,10 @@ def logout():
     return redirect('/', code=302)
 
 
-@app.route('/tests', methods=['GET', 'POST'])
-def tests():
-    pass
+@app.route('/desktop/runscript', methods=['GET', 'POST'])
+def runscript():
+    runpy.run_path('script/script.py')
+    return 'Running script'
 
 
 
